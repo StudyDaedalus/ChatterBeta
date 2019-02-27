@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.blessingsoftware.chatterbeta.Models.Model;
 import com.blessingsoftware.chatterbeta.R;
+import com.hyphenate.chat.EMClient;
 
 public class WelcomeActivity extends Activity{
     private Handler handler=new Handler() {
