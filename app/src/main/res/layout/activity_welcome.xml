@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2095F2"
     tools:context=".Activity.WelcomeActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="128dp"
+        android:contentDescription="logo"
+        android:layout_height="128dp"
+        android:src="@drawable/app_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chatter Beta"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:layout_below="@id/logo"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:id="@+id/img_loading"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:contentDescription="loading"
+        android:src="@drawable/loading"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"/>
+</RelativeLayout>

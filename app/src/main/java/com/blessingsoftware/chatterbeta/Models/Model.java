@@ -16,27 +16,32 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Model {
-
     private Context context;
-    private static Model model=new Model();
+    private static Model model = new Model();
     private DBManager dbManager;
-    private ExecutorService executorService=Executors.newCachedThreadPool();//全局线程 -12.3
+    private ExecutorService executorService = Executors.newCachedThreadPool(); //创建全局线程池
 
+    // 获取单例对象
     public static Model getInstance(){
         return model;
     }
 
+    //初始化
     public void init(Context c){
-        context=c;
-        EventListener eventListener= new EventListener(context);
+        context = c;
+        //设置全局监听
+        EventListener eventListener; //= new EventListener(context);
     }
 
+    //获取全局线程池
     public ExecutorService getGlobalTheadPool(){
         return executorService;
     }
 
+    //获取DB管理类
     public DBManager getDbManager(){
-        dbManager=new DBManager(context,"ChatterBeta");
+        //待续
+        dbManager = new DBManager(context,"blchat");
         return dbManager;
     }
 }

@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#2095F2</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--公用颜色-->
+    <color name="backgroundPrimary">#EBEBEB</color>
+    <color name="textBlack">#2c2c2c</color>
+    <color name="textGray">#B0B0B0</color>
+    <color name="textWhite">#ffffff</color>
+
+    <!--个人页面-->
+    <color name="itemBackground">#fff</color>
+    <color name="textItemColor">#bfbfbf</color>
+
+    <!--朋友圈-->
+    <color name="moment_txtNameColor">#586B99</color>
+    <color name="moment_timeColor">#969696</color>
+
+    <!--按钮颜色-->
+    <color name="btn_primary_normal">#337AB7</color>
+    <color name="btn_primary_pressed">#1E496E</color>
+    <color name="btn_warning_normal">#F0AD4E</color>
+    <color name="btn_warning_pressed">#D58512</color>
+
+    <!--聊天页面-->
+    <color name="chat_room_time">#DADADA</color>
+
 </resources>

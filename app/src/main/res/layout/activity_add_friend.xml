@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_add_friend"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundPrimary"
+    >
+
+    <com.blessingsoftware.chatterbeta.Ui.CustomToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:id="@+id/addFriend_toolbar"
+        >
+    </com.blessingsoftware.chatterbeta.Ui.CustomToolbar>
+
+    <include
+        layout="@layout/base_search"
+        android:id="@+id/addfriend_etSearchFriend"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="undone_my_id"
+        android:textSize="15sp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/btn_add_friend"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/itemBackground"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_friend_radar"
+            android:id="@+id/addfriend_method_leida_img"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/addfriend_method_leida_img"
+            android:text="雷达"
+            android:textColor="@color/textBlack"
+            android:textSize="16sp"
+            android:id="@+id/addfriend_method_leida_name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/addfriend_method_leida_name"
+            android:layout_alignLeft="@+id/addfriend_method_leida_name"
+            android:text="相视一笑，近在咫尺必须建交"
+            android:id="@+id/addfriend_method_leida_desciprt"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textGray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/itemBackground"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/add_friend_face2face"
+            android:id="@+id/addfriend_method_face_img"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/addfriend_method_face_img"
+            android:text="面对面群聊"
+            android:textColor="@color/textBlack"
+            android:textSize="16sp"
+            android:id="@+id/addfriend_method_face_name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/addfriend_method_face_name"
+            android:layout_alignLeft="@+id/addfriend_method_face_name"
+            android:text="不管关系，大家一起开始聊天"
+            android:id="@+id/addfriend_method_face_desciprt"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textGray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/itemBackground"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_friend_scan"
+            android:id="@+id/addfriend_method_scan_img"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/addfriend_method_scan_img"
+            android:text="扫一扫"
+            android:textColor="@color/textBlack"
+            android:textSize="16sp"
+            android:id="@+id/addfriend_method_scan_name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/addfriend_method_scan_name"
+            android:layout_alignLeft="@+id/addfriend_method_scan_name"
+            android:text="无视距离，扫一扫二维码名片"
+            android:id="@+id/addfriend_method_scan_desciprt"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textGray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/itemBackground"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_friend_contact"
+            android:id="@+id/addfriend_method_contact_img"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/addfriend_method_contact_img"
+            android:text="手机联系人"
+            android:textColor="@color/textBlack"
+            android:textSize="16sp"
+            android:id="@+id/addfriend_method_contact_name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/addfriend_method_contact_name"
+            android:layout_alignLeft="@+id/addfriend_method_contact_name"
+            android:text="undone_add_friend_contact_hint"
+            android:id="@+id/addfriend_method_contact_desciprt"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textGray"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/itemBackground"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_friend_pub"
+            android:id="@+id/addfriend_method_public_img"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/addfriend_method_public_img"
+            android:text="公众号"
+            android:textColor="@color/textBlack"
+            android:textSize="16sp"
+            android:id="@+id/addfriend_method_public_name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/addfriend_method_public_name"
+            android:layout_alignLeft="@+id/addfriend_method_public_name"
+            android:text="undone_add_friend_pub_hint"
+            android:id="@+id/addfriend_method_public_desciprt"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

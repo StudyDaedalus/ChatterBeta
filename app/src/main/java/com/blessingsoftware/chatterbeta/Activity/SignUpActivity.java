@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.blessingsoftware.chatterbeta.Models.Model;
 import com.blessingsoftware.chatterbeta.R;
+import com.blessingsoftware.chatterbeta.ServerRequest.SRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +33,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        buttonSignUpSubmit=(Button) findViewById(R.id.button_sign_up_submit);
+        buttonSignUpSubmit=(Button) findViewById(R.id.btn_sign_up_submit);
         edtAccount=(EditText)findViewById(R.id.edt_sign_up_account);
         edtName=(EditText)findViewById(R.id.edt_sign_up_name);
         edtSex=(EditText)findViewById(R.id.edt_sign_up_sex);

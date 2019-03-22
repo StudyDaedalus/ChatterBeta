@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -16,42 +18,72 @@ import com.blessingsoftware.chatterbeta.R;
 import com.hyphenate.chat.EMClient;
 
 public class WelcomeActivity extends Activity{
-    private Handler handler=new Handler() {
-        public void handleMessage(Message msg) {
-            if (isFinishing()) {
+    private Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            // 如果当前Activity已经退出，就不处理handle中的嘻嘻
+            if (isFinishing()){
                 return;
             }
+            //判断进入主界面还是登陆界面
             isMainOrLogin();
         }
-    };
 
-    private ImageView Loading;
-    private RelativeLayout welcome_page;
+    };
+    private ImageView imgLoading;
+    private RelativeLayout wel_page;
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        Loading=(ImageView)findViewById(R.id.loading);
-        welcome_page=(RelativeLayout)findViewById(R.id.activity_welcome);
-
+        imgLoading = (ImageView) findViewById(R.id.img_loading);
+        wel_page = (RelativeLayout) findViewById(R.id.activity_welcome_page);
+        //显示动画
         showAnimation();
-        handler.sendMessageDelayed(Message.obtain(),3000);
-    }
-    private void showAnimation(){
-        AlphaAnimation alphaAnimation=new AlphaAnimation(0,1);
-        alphaAnimation.setDuration(1000);
-        welcome_page.startAnimation(alphaAnimation);
+
+        // 发送4秒延时信息
+        handler.sendMessageDelayed(Message.obtain(), 4000);
     }
 
+    private void showAnimation(){
+        //页面渐变显示
+        //创建透明动画
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0,1);
+        //创建
+        alphaAnimation.setDuration(1000);
+        //开始动画
+        wel_page.startAnimation(alphaAnimation);
+
+
+        //图片旋转
+        //创建旋转动画
+        RotateAnimation rotateAnimation = new RotateAnimation(
+                0, 760,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+        //防止重复时卡顿
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        //设置重复次数
+        rotateAnimation.setRepeatCount(2);
+        //设置时间
+        rotateAnimation.setDuration(2600);
+        imgLoading.startAnimation(rotateAnimation);
+    }
     private void isMainOrLogin(){
+        //加入线程池
         Model.getInstance().getGlobalTheadPool().execute(new Runnable() {
             @Override
             public void run() {
-                if(EMClient.getInstance().isLoggedInBefore()){
-                    Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
+                //判断当前账号是否登陆过
+                if (EMClient.getInstance().isLoggedInBefore()){
+                    //登陆过
+                    //跳转到主页面
+                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                     startActivity(intent);
-                }else{
-                    Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+                }else {
+                    //没有登陆过
+                    //跳转到登录页面
+                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
                 finish();
@@ -59,9 +91,9 @@ public class WelcomeActivity extends Activity{
         });
     }
 
-    protected void onDestory(){
+    protected void onDestroy(){
         super.onDestroy();
+        // 销毁handler里面的消息
         handler.removeCallbacksAndMessages(null);
     }
-
 }

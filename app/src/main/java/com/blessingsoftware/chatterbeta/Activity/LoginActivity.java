@@ -133,57 +133,58 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
 
-                /*EMClient.getInstance.login(account,password,new EMCallback(){
-                    @Override
-                    public void onSuccess(){
-                        Model.getInstance().getGlobalTheadPool().execute(new Runnable() {
-                            @Override
-                            public void run() {
-                                Map<String,String > data=new HashMap<String, String>();
-                                data.put("username",account);
-                                data.put("type","1");
-                                String reDate=SRequest.PostRequest(data);
-                                Logs.d("POST",reDate);
-                                try {
-                                    JSONTokener jsonParser = new JSONTokener(reDate);
-                                    JSONObject jsonObject = (JSONObject) jsonParser.nextValue();
+            /*EMClient.getInstance.login(account,password,new EMCallback(){
+                @Override
+                public void onSuccess(){
+                    Model.getInstance().getGlobalTheadPool().execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            Map<String,String > data=new HashMap<String, String>();
+                            data.put("username",account);
+                            data.put("type","1");
+                            String reDate=SRequest.PostRequest(data);
+                            Logs.d("POST",reDate);
+                            try {
+                                JSONTokener jsonParser = new JSONTokener(reDate);
+                                JSONObject jsonObject = (JSONObject) jsonParser.nextValue();
 
-                                    UserInfo userInfo = new UserInfo();
-                                    userInfo.setUserID(jsonObject.getInt("id"));
-                                    userInfo.setUserAccount(jsonObject.getString("username"));
-                                    userInfo.setUserName(jsonObject.getString("nickname"));
-                                    userInfo.setUserSign(jsonObject.getString("sign"));
-                                    userInfo.setUserHead(jsonObject.getString("head"));
-                                    userInfo.setUserSex(jsonObject.getString("sex"));
-                                    userInfo.setUserLocation(jsonObject.getString("location"));
-                                    Model.getInstance().getDbManager().getUserTableDao().addUserAccount(userInfo);
-                                }catch (JSONException e){
-                                    e.printStackTrace();
-                                }
+                                UserInfo userInfo = new UserInfo();
+                                userInfo.setUserID(jsonObject.getInt("id"));
+                                userInfo.setUserAccount(jsonObject.getString("username"));
+                                userInfo.setUserName(jsonObject.getString("nickname"));
+                                userInfo.setUserSign(jsonObject.getString("sign"));
+                                userInfo.setUserHead(jsonObject.getString("head"));
+                                userInfo.setUserSex(jsonObject.getString("sex"));
+                                userInfo.setUserLocation(jsonObject.getString("location"));
+                                Model.getInstance().getDbManager().getUserTableDao().addUserAccount(userInfo);
+                            }catch (JSONException e){
+                                e.printStackTrace();
                             }
-                        });
-                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                        startActivity(intent);
-                        finish();
-            }
-            @Override
-                    public void onError(int i,String s){
-                        Toast.makeText(LoginActivity.this,"登录失败！",Toast.LENGTH_LONG).show();
-            }
-            @Override
-                    public void onProgress(int i,String s){}
-        });
-            }
-        });
-    }*/
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event){
-        switch (keyCode){
-            case KeyEvent.KEYCODE_BACK:
-                moveTaskToBack(true);
-                break;
+                        }
+                    });
+                    Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
         }
-        return true;
+        @Override
+                public void onError(int i,String s){
+                    Toast.makeText(LoginActivity.this,"登录失败！",Toast.LENGTH_LONG).show();
+        }
+        @Override
+                public void onProgress(int i,String s){}
+    });
+        }
+    });
+}*/
+            //@Override
+            public boolean onKeyDown(int keyCode, KeyEvent event) {
+                switch (keyCode) {
+                    case KeyEvent.KEYCODE_BACK:
+                        moveTaskToBack(true);
+                        break;
+                }
+                return true;
+            }
+        });
     }
-
 }
