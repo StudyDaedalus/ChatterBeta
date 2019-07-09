@@ -26,7 +26,7 @@ public class ChatterBetaApplication extends Application {
         int pid=android.os.Process.myPid();
         String processAppName=getAppName(pid);
         if(processAppName==null||!processAppName.equalsIgnoreCase(this.getPackageName())){
-            Logs.e("APP","enter the service process.");
+            Logs.e("APP","enter the service process.");//test
             return;
         }
         EMClient.getInstance().init(this,options);
